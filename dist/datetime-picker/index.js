@@ -266,9 +266,9 @@ VantComponent({
         const year = getTrueValue(values[0]);
         const month = getTrueValue(values[1]);
         const maxDate = getMonthEndDay(year, month);
-        let date = getTrueValue(values[2]);
-        if (data.type === 'year-month') {
-          date = 1;
+        let date = 1;
+        if (data.type !== 'year-month') {
+          date = getTrueValue(values[2]);
         }
         date = date > maxDate ? maxDate : date;
         let hour = 0;
